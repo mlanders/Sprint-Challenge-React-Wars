@@ -7,7 +7,13 @@ function CharacterList(props) {
 	return (
 		<div className="characterList">
 			{props.characterList.map(char => {
-				return <Character char={char} vehicle={props.vehicles} />;
+				return (
+					<Character
+						char={char}
+						vehicle={props.vehicles}
+						films={props.films}
+					/>
+				);
 			})}
 		</div>
 	);

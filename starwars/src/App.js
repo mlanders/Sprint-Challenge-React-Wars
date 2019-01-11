@@ -7,13 +7,15 @@ class App extends Component {
 		super();
 		this.state = {
 			starwarsChars: [],
-			vehicles: []
+			vehicles: [],
+			films: []
 		};
 	}
 
 	componentDidMount() {
-		this.getCharacters('https://swapi.co/api/people');
+		this.getCharacters('https://swapi.co/api/people/');
 		this.getVehicles('https://swapi.co/api/vehicles/');
+		this.getFilms('https://swapi.co/api/films/');
 	}
 
 	getCharacters = URL => {
@@ -28,6 +30,7 @@ class App extends Component {
 				throw new Error(err);
 			});
 	};
+
 	getVehicles = URL => {
 		fetch(URL)
 			.then(res => {
@@ -41,6 +44,19 @@ class App extends Component {
 			});
 	};
 
+	getFilms = URL => {
+		fetch(URL)
+			.then(res => {
+				return res.json();
+			})
+			.then(data => {
+				this.setState({ films: data.results });
+			})
+			.catch(err => {
+				throw new Error(err);
+			});
+	};
+
 	render() {
 		return (
 			<div className="App">
@@ -48,6 +64,7 @@ class App extends Component {
 				<CharacterList
 					characterList={this.state.starwarsChars}
 					vehicles={this.state.vehicles}
+					films={this.state.films}
 				/>
 			</div>
 		);
