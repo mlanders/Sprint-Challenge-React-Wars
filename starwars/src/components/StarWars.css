@@ -1,0 +1,23 @@
+.characterList {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 800px;
+	justify-content: center;
+	align-items: center;
+}
+.character {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	width: 300px;
+	border: 1px solid black;
+	border-radius: 4px;
+	background-color: rgb(0, 0, 0, 0.5);
+	margin: 10px;
+	color: white;
+}
+.name {
+	font-size: 1.6rem;
+	margin-bottom: 10px;
+}
