@@ -1,15 +1,24 @@
+.App {
+	text-align: center;
+}
+.Header {
+	color: #443e3e;
+	text-shadow: 1px 1px 5px #fff;
+}
+
 .characterList {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 auto;
 	max-width: 800px;
 	justify-content: center;
-	align-items: center;
+	align-items: stretch;
 }
 .character {
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	/* justify-content: start; */
+
 	width: 300px;
 	border: 1px solid black;
 	border-radius: 4px;
@@ -20,4 +29,8 @@
 .name {
 	font-size: 1.6rem;
 	margin-bottom: 10px;
+}
+
+.listItem {
+	list-style: none;
 }
